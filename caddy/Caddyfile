@@ -2,10 +2,10 @@
     email mail@danielpereira.dev
 }
 
-*.yourdomain.com {
+*.pereiras.eu {
     tls {
         dns hetzner {
-            auth_api_token {env.HETZNER_DNS_TOKEN}
+            token {env.HETZNER_DNS_TOKEN}
         }
     }
 
