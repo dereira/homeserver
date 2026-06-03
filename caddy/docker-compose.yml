@@ -13,6 +13,8 @@ services:
       - caddy_config:/config
     environment:
       - HETZNER_DNS_TOKEN=${HETZNER_DNS_TOKEN}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - proxy
 

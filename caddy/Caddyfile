@@ -10,6 +10,6 @@
 
     @nextcloud host cloud.pereiras.eu
     handle @nextcloud {
-        reverse_proxy localhost:11000
+        reverse_proxy host.docker.internal:11000
     }
 }
