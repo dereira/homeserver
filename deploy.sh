@@ -2,9 +2,6 @@
 
 set -e
 
-echo "Creating proxy network..."
-docker network create proxy 2>/dev/null || true
-
 echo "Starting Caddy..."
 docker compose -f caddy/docker-compose.yml up -d
 

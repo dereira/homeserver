@@ -1,7 +1,7 @@
 services:
   caddy:
     build: .
-    image: caddy-inwx:latest
+    image: caddy-hetzner:latest
     restart: unless-stopped
     ports:
       - "80:80"
@@ -12,8 +12,7 @@ services:
       - caddy_data:/data
       - caddy_config:/config
     environment:
-      - INWX_USERNAME=${INWX_USERNAME}
-      - INWX_PASSWORD=${INWX_PASSWORD}
+      - HETZNER_DNS_TOKEN=${HETZNER_DNS_TOKEN}
     networks:
       - proxy
 
