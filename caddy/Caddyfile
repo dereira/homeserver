@@ -4,9 +4,8 @@
 
 *.pereiras.eu {
     tls {
-        dns hetzner {
-            token {env.HETZNER_DNS_TOKEN}
-        }
+        dns hetzner {env.HETZNER_DNS_TOKEN}
+        propagation_delay 30s
     }
 
     @nextcloud host cloud.pereiras.eu
