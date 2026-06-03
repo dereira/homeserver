@@ -2,14 +2,11 @@
     email mail@danielpereira.dev
 }
 
-*.pereiras.eu {
+https://cloud.pereiras.eu:443 {
+    header Strict-Transport-Security max-age=31536000;
     tls {
         dns hetzner {env.HETZNER_DNS_TOKEN}
         propagation_delay 30s
     }
-
-    @nextcloud host cloud.pereiras.eu
-    handle @nextcloud {
-        reverse_proxy host.docker.internal:11000
-    }
+    reverse_proxy localhost:11000
 }

@@ -3,25 +3,14 @@ services:
     build: .
     image: caddy-hetzner:latest
     restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+    network_mode: host
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     environment:
       - HETZNER_DNS_TOKEN=${HETZNER_DNS_TOKEN}
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - proxy
 
 volumes:
   caddy_data:
   caddy_config:
-
-networks:
-  proxy:
-    external: true
